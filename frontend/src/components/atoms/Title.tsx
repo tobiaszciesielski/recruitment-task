@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledFormTitle = styled.div`
+const StyledTitle = styled.div`
   width: 100%;
   text-align: center;
   h2 {
@@ -14,11 +14,11 @@ const StyledFormTitle = styled.div`
   }
 `;
 
-const FormTitle = () => (
-  <StyledFormTitle>
+const Title = () => (
+  <StyledTitle>
     <h2>Tobiasz Ciesielski’s</h2>
     <h1>RECRUITMENT TASK</h1>
-  </StyledFormTitle>
+  </StyledTitle>
 );
 
-export default FormTitle;
+export default Title;

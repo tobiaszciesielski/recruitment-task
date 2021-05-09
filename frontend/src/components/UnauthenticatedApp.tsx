@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect, Switch, Route } from 'react-router-dom';
-import SignIn from './organisms/SignIn';
-import SignUp from './organisms/SignUp';
+import SignIn from './molecules/SignIn';
+import SignUp from './molecules/SignUp';
 
 const UnauthenticatedApp = () => (
   <Switch>
