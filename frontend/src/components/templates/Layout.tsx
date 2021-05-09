@@ -1,6 +1,7 @@
 import React, { ReactChildren, ReactChild } from 'react';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyles from '../../styles/global';
+import theme from '../../styles/theme';
 import FormHeader from '../molecules/FormHeader';
 
 const FormWrapper = styled.div`
@@ -19,13 +20,15 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => (
-  <>
-    <GlobalStyles />
-    <FormWrapper>
-      <FormHeader />
-      {children}
-    </FormWrapper>
-  </>
+  <ThemeProvider theme={theme}>
+    <>
+      <GlobalStyles />
+      <FormWrapper>
+        <FormHeader />
+        {children}
+      </FormWrapper>
+    </>
+  </ThemeProvider>
 );
 
 export default Layout;

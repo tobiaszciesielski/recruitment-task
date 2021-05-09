@@ -1,12 +1,9 @@
 import React from 'react';
-import Layout from './templates/Layout';
+import AuthenticatedApp from './AuthenticatedApp';
+import UnauthenticatedApp from './UnauthenticatedApp';
 
-const App = () => (
-  <Layout>
-    <h1>Login Form</h1>
-    <p>First Name</p>
-    <p>Second Name</p>
-  </Layout>
-);
+const user = false;
+
+const App = () => (user ? <AuthenticatedApp /> : <UnauthenticatedApp />);
 
 export default App;
