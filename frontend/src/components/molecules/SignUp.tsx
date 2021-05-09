@@ -1,5 +1,7 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
+import { useAuth } from '../../context/auth';
 import Button from '../atoms/Button';
 import Input from '../atoms/Input';
 
@@ -15,25 +17,37 @@ const StyledForm = styled.form`
   }
 `;
 
-// const Separator = styled.div`
-//   text-align: center;
-//   font-family: ${({ theme }) => theme.typography.robotoRegular};
-//   font-size: 14px;
-//   color: ${({ theme }) => theme.outline};
-//   margin: 3px;
-// `;
-
 const StyledInput = styled(Input)`
   margin-bottom: 12px;
 `;
 
-const SignUp = () => (
-  <StyledForm action="submit">
-    <StyledInput id="firstName" placeholder="first name" />
-    <StyledInput id="secondName" placeholder="second name" />
-    <StyledInput id="password" placeholder="password" />
-    <Button type="submit">Sign up</Button>
-  </StyledForm>
-);
+interface FormData {
+  firstName: string;
+  lastName: string;
+  password: string;
+}
+
+const SignUp = () => {
+  const { register, handleSubmit } = useForm<FormData>();
+  const { signup } = useAuth();
+  const onSubmit = handleSubmit((data) => signup(data));
+
+  return (
+    <StyledForm onSubmit={onSubmit}>
+      <StyledInput
+        id="firstName"
+        placeholder="First Name"
+        register={register}
+      />
+      <StyledInput
+        id="secondName"
+        placeholder="Second Name"
+        register={register}
+      />
+      <StyledInput id="password" placeholder="Password" register={register} />
+      <Button type="submit">Sign up</Button>
+    </StyledForm>
+  );
+};
 
 export default SignUp;

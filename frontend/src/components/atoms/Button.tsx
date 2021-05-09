@@ -6,6 +6,9 @@ const StyledButton = styled.button<ButtonProps>`
   outline: none;
   font-size: 16px;
   padding: 12px 80px;
+  text-align: center;
+  width: 230px;
+  height: 40px;
 
   ${({ theme: { touch, background, primary }, light }) =>
     light

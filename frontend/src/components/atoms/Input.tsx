@@ -1,4 +1,5 @@
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
 import styled, { css } from 'styled-components';
 
 const Label = styled.label`
@@ -27,11 +28,24 @@ export const StyledInput = styled.input`
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
+  id: string;
+  register: UseFormRegister<any>;
 }
 
-const Input = ({ id, placeholder, className = '', ...rest }: InputProps) => (
+const Input = ({
+  id,
+  placeholder,
+  className = '',
+  register,
+  ...rest
+}: InputProps) => (
   <Label htmlFor={id}>
-    <StyledInput className={className} placeholder={placeholder} {...rest} />
+    <StyledInput
+      {...register(id, { required: true })}
+      className={className}
+      placeholder={placeholder}
+      {...rest}
+    />
   </Label>
 );
 

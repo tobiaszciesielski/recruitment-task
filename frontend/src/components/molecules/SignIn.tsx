@@ -1,8 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
 import Button from '../atoms/Button';
 import Input from '../atoms/Input';
+import Spinner from '../atoms/Spinner';
+import { useAuth } from '../../context/auth';
 
 const StyledForm = styled.form`
   width: 100%;
@@ -25,17 +28,31 @@ const StyledInput = styled(Input)`
   margin-bottom: 50px;
 `;
 
+interface FormData {
+  password: string;
+}
+
 const SignIn = () => {
   const history = useHistory();
+  const { signin } = useAuth();
+  const {
+    register,
+    handleSubmit,
+    formState: { isSubmitting },
+  } = useForm<FormData>();
+
+  const onSubmit = handleSubmit((data) => signin(data.password));
 
   return (
-    <StyledForm action="submit">
-      <StyledInput placeholder="password" id="password" />
+    <StyledForm onSubmit={onSubmit}>
+      <StyledInput placeholder="password" id="password" register={register} />
       <div>
-        <Button type="submit">Sign in</Button>
+        <Button type="submit" disabled={isSubmitting}>
+          {isSubmitting ? <Spinner white /> : 'Sing in'}
+        </Button>
         <Separator>OR</Separator>
         <Button type="button" light onClick={() => history.push('/signup')}>
-          Sign in
+          Sing up
         </Button>
       </div>
     </StyledForm>
