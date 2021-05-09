@@ -20,7 +20,7 @@ export const StyledInput = styled.input`
       border-radius: 0;
     }
   `}
-  padding: 10px 15px;
+  padding: 15px;
   width: 100%;
   font-size: 14px;
 `;
