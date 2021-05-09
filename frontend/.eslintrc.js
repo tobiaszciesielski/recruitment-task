@@ -41,6 +41,7 @@ module.exports = {
         '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         'react/react-in-jsx-scope': 'off',
+        '@typescript-eslint/no-empty-interface': 'off',
       },
     },
   ],
