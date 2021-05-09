@@ -1,12 +1,18 @@
-import React from 'react';
-import AuthenticatedApp from './AuthenticatedApp';
-import UnauthenticatedApp from './UnauthenticatedApp';
+import React, { Suspense } from 'react';
+import Spinner from './atoms/Indicator';
 import Layout from './templates/Layout';
+
+const AuthenticatedApp = React.lazy(() => import('./AuthenticatedApp'));
+const UnauthenticatedApp = React.lazy(() => import('./UnauthenticatedApp'));
 
 const user = false;
 
 const App = () => (
-  <Layout>{user ? <AuthenticatedApp /> : <UnauthenticatedApp />}</Layout>
+  <Layout>
+    <Suspense fallback={<Spinner />}>
+      {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+    </Suspense>
+  </Layout>
 );
 
 export default App;

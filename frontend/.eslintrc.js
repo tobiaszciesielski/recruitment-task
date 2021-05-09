@@ -18,9 +18,6 @@ module.exports = {
     },
   },
   rules: {
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
-    'react/react-in-jsx-scope': 'off',
     'prettier/prettier': [
       'error',
       {
@@ -42,6 +39,9 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'off',
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-empty-interface': 'off',
+        'jsx-a11y/label-has-associated-control': 'off',
+        'react/require-default-props': 'off',
+        'react/jsx-props-no-spreading': 'off',
       },
     },
   ],

@@ -7,7 +7,7 @@ const theme = {
   secondary: 'rgba(0, 0, 0, 0.6);',
   touch: '#1FCE8B',
   grey: '#F4F4F4',
-  outline: '#D7D7D7',
+  outline: 'rgba(0, 0, 0, 0.2);',
   background: '#FFF',
   typography: {
     robotoRegular: 'Roboto Regular',
