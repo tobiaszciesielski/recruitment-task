@@ -1,0 +1,7 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.run": "onSave",
+  "eslint.workingDirectories": [
+    { "directory": "./frontend", "changeProcessCWD": true }
+  ]
+}
