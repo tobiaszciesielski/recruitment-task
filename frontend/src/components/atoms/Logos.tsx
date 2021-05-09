@@ -8,6 +8,7 @@ const StyledLogos = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 25px;
 
   .synapsi-img,
   .tcies-img-wrapper {

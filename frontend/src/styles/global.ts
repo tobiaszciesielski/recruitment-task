@@ -14,6 +14,11 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
   }
+
+  h1, h2, h3, h4, h5 {
+    font-weight: normal;
+  }
+
 `;
 
 export default GlobalStyles;

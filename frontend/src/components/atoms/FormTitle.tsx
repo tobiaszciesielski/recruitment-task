@@ -3,6 +3,15 @@ import styled from 'styled-components';
 
 const StyledFormTitle = styled.div`
   width: 100%;
+  text-align: center;
+  h2 {
+    font-family: ${({ theme }) => theme.typography.ralewayRegular};
+    font-size: 14px;
+  }
+  h1 {
+    font-family: ${({ theme }) => theme.typography.robotoRegular};
+    font-size: 18px;
+  }
 `;
 
 const FormTitle = () => (
