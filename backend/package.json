@@ -7,6 +7,10 @@
     "test": "jest",
     "start": "node build/src/index.js"
   },
+  "engines": {
+    "node": "14.x",
+    "npm":"7.x"
+  },
   "module": "CommonJS",
   "keywords": [],
   "author": "",
