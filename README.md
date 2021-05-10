@@ -5,3 +5,7 @@
 ---
 
 [DESIGN](https://www.figma.com/file/gXvQTswsTUA0s6e0TprQo8/Untitled)
+
+
+Backend provided by [HEROKU](https://recruitment-task-tc.herokuapp.com/)
+Frontend is provided by [NETLIFY](https://inspiring-joliot-8f5b73.netlify.app/)
