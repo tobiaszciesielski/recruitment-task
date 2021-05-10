@@ -5,7 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "jest",
-    "start": "node app/build/src/index.js"
+    "start": "node build/src/index.js"
   },
   "engines": {
     "node": "14.x",
