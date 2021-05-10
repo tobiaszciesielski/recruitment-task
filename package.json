@@ -5,8 +5,7 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "jest",
-    "start": "node build/src/index.js",
-    "tsc": "tsc"
+    "start": "ts-node ."
   },
   "module": "CommonJS",
   "keywords": [],
