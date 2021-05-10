@@ -2,19 +2,9 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const {
-  PORT,
-  SECRET_KEY,
-  MONGO_PASSWORD,
-  MONGO_USERNAME,
-} = process.env;
+const { PORT, SECRET_KEY, MONGO_PASSWORD, MONGO_USERNAME } = process.env;
 
-if (
-  !SECRET_KEY ||
-  !SECRET_KEY ||
-  !MONGO_PASSWORD ||
-  !MONGO_USERNAME
-) {
+if (!SECRET_KEY || !MONGO_PASSWORD || !MONGO_USERNAME) {
   process.exit(1);
 }
 
