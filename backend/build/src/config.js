@@ -6,11 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.secretKey = exports.mongoUrl = exports.port = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-const { PORT, SECRET_KEY, MONGO_PASSWORD, MONGO_USERNAME, } = process.env;
-if (!SECRET_KEY ||
-    !SECRET_KEY ||
-    !MONGO_PASSWORD ||
-    !MONGO_USERNAME) {
+const { PORT, SECRET_KEY, MONGO_PASSWORD, MONGO_USERNAME } = process.env;
+if (!SECRET_KEY || !MONGO_PASSWORD || !MONGO_USERNAME) {
     process.exit(1);
 }
 const port = PORT || "8080";
