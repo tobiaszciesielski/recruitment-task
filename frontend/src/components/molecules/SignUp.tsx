@@ -51,11 +51,7 @@ const SignUp = () => {
         placeholder="First Name"
         register={register}
       />
-      <StyledInput
-        id="lastName"
-        placeholder="Second Name"
-        register={register}
-      />
+      <StyledInput id="lastName" placeholder="Last Name" register={register} />
       <StyledInput
         id="password"
         placeholder="Password"
