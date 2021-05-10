@@ -56,7 +56,12 @@ const SignUp = () => {
         placeholder="Second Name"
         register={register}
       />
-      <StyledInput id="password" placeholder="Password" register={register} />
+      <StyledInput
+        id="password"
+        placeholder="Password"
+        type="password"
+        register={register}
+      />
       {responseMessage !== '' && <Message>{responseMessage}</Message>}
       <Button type="submit">Sign up</Button>
     </StyledForm>

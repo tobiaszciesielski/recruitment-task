@@ -63,7 +63,12 @@ const SignIn = () => {
 
   return (
     <StyledForm onSubmit={onSubmit}>
-      <StyledInput placeholder="password" id="password" register={register} />
+      <StyledInput
+        placeholder="password"
+        id="password"
+        type="password"
+        register={register}
+      />
       <Buttons>
         {responseMessage !== '' && <Message>{responseMessage}</Message>}
         <Button type="submit" disabled={isSubmitting}>
