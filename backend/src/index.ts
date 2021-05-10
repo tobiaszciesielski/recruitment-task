@@ -4,6 +4,7 @@ import helmet from "helmet";
 import "./db/index";
 import apiRouter from "./routes/api";
 import { port } from "../src/config";
+const path = require("path");
 
 const app = express();
 app.use(helmet());

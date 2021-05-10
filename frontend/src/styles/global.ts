@@ -7,7 +7,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0;
   }
 
-  body {
+  #root {
     padding: 20px;
     width: 100vw;
     height: 100vh;
