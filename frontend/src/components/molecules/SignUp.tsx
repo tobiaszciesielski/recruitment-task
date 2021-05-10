@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import styled from 'styled-components';
 import { useAuth } from '../../context/auth';
@@ -21,6 +21,13 @@ const StyledInput = styled(Input)`
   margin-bottom: 12px;
 `;
 
+const Message = styled.h4`
+  margin-bottom: 2px;
+  color: ${({ theme }) => theme.secondary};
+  font-family: ${({ theme }) => theme.typography.robotoRegular};
+  font-size: 14px;
+`;
+
 interface FormData {
   firstName: string;
   lastName: string;
@@ -28,9 +35,13 @@ interface FormData {
 }
 
 const SignUp = () => {
+  const [responseMessage, setResponseMessage] = useState<string>('');
   const { register, handleSubmit } = useForm<FormData>();
   const { signup } = useAuth();
-  const onSubmit = handleSubmit((data) => signup(data));
+  const onSubmit = handleSubmit(async (data) => {
+    const err = await signup(data);
+    setResponseMessage(err);
+  });
 
   return (
     <StyledForm onSubmit={onSubmit}>
@@ -45,6 +56,7 @@ const SignUp = () => {
         register={register}
       />
       <StyledInput id="password" placeholder="Password" register={register} />
+      {responseMessage !== '' && <Message>{responseMessage}</Message>}
       <Button type="submit">Sign up</Button>
     </StyledForm>
   );

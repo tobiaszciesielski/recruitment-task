@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
@@ -28,11 +28,24 @@ const StyledInput = styled(Input)`
   margin-bottom: 50px;
 `;
 
+const Message = styled.h4`
+  position: absolute;
+  bottom: 100%;
+  color: ${({ theme }) => theme.secondary};
+  font-family: ${({ theme }) => theme.typography.robotoRegular};
+  font-size: 14px;
+`;
+
+const Buttons = styled.div`
+  position: relative;
+`;
+
 interface FormData {
   password: string;
 }
 
 const SignIn = () => {
+  const [responseMessage, setResponseMessage] = useState<string>('');
   const history = useHistory();
   const { signin } = useAuth();
   const {
@@ -41,12 +54,16 @@ const SignIn = () => {
     formState: { isSubmitting },
   } = useForm<FormData>();
 
-  const onSubmit = handleSubmit((data) => signin(data.password));
+  const onSubmit = handleSubmit(async ({ password }) => {
+    const msg = await signin(password);
+    setResponseMessage(msg);
+  });
 
   return (
     <StyledForm onSubmit={onSubmit}>
       <StyledInput placeholder="password" id="password" register={register} />
-      <div>
+      <Buttons>
+        {responseMessage !== '' && <Message>{responseMessage}</Message>}
         <Button type="submit" disabled={isSubmitting}>
           {isSubmitting ? <Spinner white /> : 'Sing in'}
         </Button>
@@ -54,7 +71,7 @@ const SignIn = () => {
         <Button type="button" light onClick={() => history.push('/signup')}>
           Sing up
         </Button>
-      </div>
+      </Buttons>
     </StyledForm>
   );
 };

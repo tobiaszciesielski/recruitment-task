@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    padding: 20px;
     width: 100vw;
     height: 100vh;
     display: flex;

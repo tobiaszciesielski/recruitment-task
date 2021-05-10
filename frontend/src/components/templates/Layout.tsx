@@ -6,13 +6,14 @@ import Card from '../organisms/Card';
 
 interface LayoutProps {
   children: ReactChild | ReactChildren | ReactChild[] | ReactChildren[];
+  wide?: boolean;
 }
 
-const Layout = ({ children }: LayoutProps) => (
+const Layout = ({ children, ...rest }: LayoutProps) => (
   <ThemeProvider theme={theme}>
     <>
       <GlobalStyles />
-      <Card>{children}</Card>
+      <Card {...rest}>{children}</Card>
     </>
   </ThemeProvider>
 );

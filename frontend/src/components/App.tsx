@@ -7,12 +7,12 @@ const AuthenticatedApp = React.lazy(() => import('./AuthenticatedApp'));
 const UnauthenticatedApp = React.lazy(() => import('./UnauthenticatedApp'));
 
 const App = () => {
-  const { user, token } = useAuth();
-  console.log(user, token);
+  const { isAuthenticated } = useAuth();
+
   return (
-    <Layout>
+    <Layout wide={isAuthenticated()}>
       <Suspense fallback={<Spinner />}>
-        {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
+        {isAuthenticated() ? <AuthenticatedApp /> : <UnauthenticatedApp />}
       </Suspense>
     </Layout>
   );

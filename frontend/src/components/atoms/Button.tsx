@@ -5,7 +5,7 @@ const StyledButton = styled.button<ButtonProps>`
   cursor: pointer;
   outline: none;
   font-size: 16px;
-  padding: 12px 80px;
+  padding: 12px;
   text-align: center;
   width: 230px;
   height: 40px;

@@ -10,6 +10,10 @@ interface CustomRequest<T> extends Request {
   body: T;
 }
 
+interface LoginRequest {
+  password: string;
+}
+
 export const registerUser = (req: CustomRequest<IUser>, res: Response) => {
   let { firstName, lastName, password: toEncode } = req.body;
 
@@ -42,10 +46,6 @@ export const registerUser = (req: CustomRequest<IUser>, res: Response) => {
     });
 };
 
-interface LoginRequest {
-  password: string;
-}
-
 export const loginUser = (req: CustomRequest<LoginRequest>, res: Response) => {
   let { password } = req.body;
 
@@ -62,7 +62,7 @@ export const loginUser = (req: CustomRequest<LoginRequest>, res: Response) => {
           },
         });
       } else {
-        return res.status(400).json({ messsage: "Password not found!" });
+        return res.status(400).json({ message: "Password not found!" });
       }
     })
     .catch((err) => {

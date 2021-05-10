@@ -5,28 +5,25 @@ export interface User {
   lastName: string;
 }
 
-export interface ResponseProp {
+export interface Response {
   token: string;
   user: User;
 }
 
-export interface LoginProp {
+export interface LoginRequest {
   password: string;
 }
 
-export interface RegisterProp {
+export interface RegisterRequest {
   firstName: string;
   lastName: string;
   password: string;
 }
 
-export const login = async (request: LoginProp) => {
-  return axios.post<ResponseProp>(`http://localhost:8080/api/login`, request);
+export const login = async (request: LoginRequest) => {
+  return axios.post<Response>(`http://localhost:8080/api/login`, request);
 };
 
-export const register = async (request: RegisterProp) => {
-  return axios.post<ResponseProp>(
-    `http://localhost:8080/api/register`,
-    request
-  );
+export const register = async (request: RegisterRequest) => {
+  return axios.post<Response>(`http://localhost:8080/api/register`, request);
 };
