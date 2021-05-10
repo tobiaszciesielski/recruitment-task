@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export interface User {
   firstName: string;
-  secondName: string;
+  lastName: string;
 }
 
 export interface ResponseProp {

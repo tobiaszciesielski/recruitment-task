@@ -10,7 +10,7 @@ import { login, register, User, RegisterProp } from '../services/http';
 const authToken = 'auth-token';
 
 interface ContextProps {
-  token: string;
+  token: string | null;
   user: User | null;
   signin: (password: string) => void;
   signup: (data: RegisterProp) => void;
@@ -24,7 +24,7 @@ interface AuthProviderProps {
 const AuthContext = createContext<ContextProps>({} as ContextProps);
 
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [token, setToken] = useState(localStorage.getItem(authToken) || '');
+  const [token, setToken] = useState<string | null>(null);
   const [user, setUser] = useState<User | null>(null);
 
   const signin = async (password: string) => {

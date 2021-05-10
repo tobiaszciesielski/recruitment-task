@@ -40,7 +40,7 @@ const SignUp = () => {
         register={register}
       />
       <StyledInput
-        id="secondName"
+        id="lastName"
         placeholder="Second Name"
         register={register}
       />

@@ -5,7 +5,7 @@ const Profile = () => (
     <label htmlFor="firstName">
       <input type="text" />
     </label>
-    <label htmlFor="secondName">
+    <label htmlFor="lastName">
       <input type="text" />
     </label>
     <label htmlFor="password">
