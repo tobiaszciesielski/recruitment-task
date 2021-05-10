@@ -26,6 +26,7 @@ const Message = styled.h4`
   color: ${({ theme }) => theme.secondary};
   font-family: ${({ theme }) => theme.typography.robotoRegular};
   font-size: 14px;
+  text-align: center;
 `;
 
 interface FormData {

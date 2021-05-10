@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+const restApi = process.env.REACT_APP_API;
+
 export interface User {
   firstName: string;
   lastName: string;
@@ -21,9 +23,9 @@ export interface RegisterRequest {
 }
 
 export const login = async (request: LoginRequest) => {
-  return axios.post<Response>(`http://localhost:8080/api/login`, request);
+  return axios.post<Response>(`${restApi}/api/login`, request);
 };
 
 export const register = async (request: RegisterRequest) => {
-  return axios.post<Response>(`http://localhost:8080/api/register`, request);
+  return axios.post<Response>(`${restApi}/api/register`, request);
 };

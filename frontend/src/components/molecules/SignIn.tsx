@@ -29,7 +29,9 @@ const StyledInput = styled(Input)`
 `;
 
 const Message = styled.h4`
+  width: 100%;
   position: absolute;
+  text-align: center;
   bottom: 100%;
   color: ${({ theme }) => theme.secondary};
   font-family: ${({ theme }) => theme.typography.robotoRegular};
