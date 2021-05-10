@@ -4,14 +4,12 @@ dotenv.config();
 
 const {
   PORT,
-  MONGO_API,
   SECRET_KEY,
   MONGO_PASSWORD,
   MONGO_USERNAME,
 } = process.env;
 
 if (
-  !MONGO_API ||
   !SECRET_KEY ||
   !SECRET_KEY ||
   !MONGO_PASSWORD ||
