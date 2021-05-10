@@ -5,8 +5,9 @@
   "main": "src/index.ts",
   "scripts": {
     "test": "jest",
-    "start": "node ."
+    "start": "ts-node ."
   },
+  "module": "CommonJS",
   "keywords": [],
   "author": "",
   "license": "ISC",
