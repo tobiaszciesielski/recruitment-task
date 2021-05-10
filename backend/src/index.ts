@@ -3,9 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import "./db/index";
 import apiRouter from "./routes/api";
-import { port } from "../src/config";
-import LogRocket from "logrocket";
-LogRocket.init("57idnn/recruitment-task-tc");
+import { port } from "../src/config";;
 
 const app = express();
 app.use(helmet());
