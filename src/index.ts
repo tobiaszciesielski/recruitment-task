@@ -4,8 +4,6 @@ import helmet from "helmet";
 import "./db/index";
 import apiRouter from "./routes/api";
 import { port } from "../src/config";
-import LogRocket from "logrocket";
-LogRocket.init("57idnn/recruitment-task-tc");
 
 const app = express();
 app.use(helmet());
