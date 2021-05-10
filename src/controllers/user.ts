@@ -22,16 +22,24 @@ export const registerUser = (req: CustomRequest<IUser>, res: Response) => {
     password,
   });
 
-  user.save().then((result) => {
-    const response: IResponse = {
-      token: createToken(`${result._id}`),
-      user: {
-        firstName: result.firstName,
-        lastName: result.lastName,
-      },
-    };
-    return res.status(201).json(response);
-  });
+  user
+    .save()
+    .then((result) => {
+      const response: IResponse = {
+        token: createToken(`${result._id}`),
+        user: {
+          firstName: result.firstName,
+          lastName: result.lastName,
+        },
+      };
+      return res.status(201).json(response);
+    })
+    .catch((err) => {
+      return res.status(500).json({
+        message: "Something goes wrong, try again!",
+        error: err.message,
+      });
+    });
 };
 
 interface LoginRequest {
@@ -54,10 +62,13 @@ export const loginUser = (req: CustomRequest<LoginRequest>, res: Response) => {
           },
         });
       } else {
-        return res.status(500).json("Password not found!");
+        return res.status(400).json({ messsage: "Password not found!" });
       }
     })
     .catch((err) => {
-      return res.status(500).json("Password not found!");
+      return res.status(500).json({
+        message: "Something goes wrong, try again!",
+        error: err.message,
+      });
     });
 };
