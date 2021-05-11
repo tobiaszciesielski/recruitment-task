@@ -64,7 +64,7 @@ const SignIn = () => {
   return (
     <StyledForm onSubmit={onSubmit}>
       <StyledInput
-        placeholder="password"
+        placeholder="Password"
         id="password"
         type="password"
         register={register}
@@ -72,11 +72,11 @@ const SignIn = () => {
       <Buttons>
         {responseMessage !== '' && <Message>{responseMessage}</Message>}
         <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? <Spinner white /> : 'Sing in'}
+          {isSubmitting ? <Spinner white /> : 'Sign in'}
         </Button>
         <Separator>OR</Separator>
         <Button type="button" light onClick={() => history.push('/signup')}>
-          Sing up
+          Sign up
         </Button>
       </Buttons>
     </StyledForm>
